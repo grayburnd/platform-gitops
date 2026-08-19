@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+labels: {{ .Values.labels | toYamlPretty | nindent 2 }}
+metadata:
+  name: {{ .Values.EBSStorageClass.name }}
+provisioner: {{ .Values.EBSStorageClass.provisioner }}
+{{- with .Values.EBSStorageClass.parameters }}
+parameters: {{- . | toYamlPretty | nindent 2 }}
+{{- end }}
+reclaimPolicy: {{ .Values.EBSStorageClass.reclaimPolicy }}
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: {{ .Values.EBSStorageClass.allowVolumeExpansion }}

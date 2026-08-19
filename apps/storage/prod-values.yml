@@ -1,0 +1,18 @@
+team: platform
+environment: prod
+labels:
+  app: platform
+  component: storage
+  env: prod
+  team: platform
+aws:
+  accountId: "632988741882"
+  region: us-east-1
+EBSStorageClass:
+  name: ebs-gp3
+  provisioner: ebs.csi.aws.com
+  parameters:
+    type: gp3
+    encrypted: "true"
+  reclaimPolicy: Retain # Retain for databases! Don't auto-delete data
+  allowVolumeExpansion: true #false

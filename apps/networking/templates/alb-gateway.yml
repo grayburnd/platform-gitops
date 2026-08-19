@@ -1,0 +1,13 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: {{ .Values.publicALBGateway.name }}
+  namespace: {{ .Values.team }}-{{ .Values.environment }}
+spec:
+  gatewayClassName: {{ .Values.publicALBGateway.gatewayClassName }}
+  infrastructure:
+    parametersRef:
+      kind: LoadBalancerConfiguration
+      name: {{ .Values.publicALBGateway.name }}-config
+      group: gateway.k8s.aws
+  listeners: {{ .Values.publicALBGateway.listeners | toYamlPretty | nindent 4 }}

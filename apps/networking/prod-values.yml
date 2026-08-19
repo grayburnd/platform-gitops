@@ -1,0 +1,28 @@
+team: platform
+environment: prod
+labels:
+  app: platform
+  component: networking
+  env: prod
+  team: platform
+aws:
+  accountId: "632988741882"
+  region: us-east-1
+publicALBGateway:
+  name: pub-gateway
+  namespace: platform-prod
+  controllerName: gateway.k8s.aws/alb ##For L4 routing change this to nlb
+  scheme: internet-facing
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        namespaces:
+          from: All
+    # - name: https
+    #   protocol: HTTPS
+    #   port: 443
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
