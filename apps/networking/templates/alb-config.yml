@@ -1,0 +1,7 @@
+apiVersion: gateway.k8s.aws/v1
+kind: LoadBalancerConfiguration
+metadata:
+  name: {{ .Values.publicALBGateway.name }}-config
+  namespace: {{ .Values.team }}-{{ .Values.environment }}
+spec:
+  scheme: {{ .Values.publicALBGateway.scheme }}

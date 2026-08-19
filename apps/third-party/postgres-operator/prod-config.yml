@@ -1,0 +1,11 @@
+app:
+  Name: "postgres-operator"
+thirdParty:
+  repoURL: "https://github.com/zalando/postgres-operator"
+  targetRevision: "v2.0.1"
+  path: "charts/postgres-operator"
+repoURL: https://github.com/grayburnd/platform-gitops.git
+prune: true
+selfHeal: true
+ignoreDifferences: []
+  

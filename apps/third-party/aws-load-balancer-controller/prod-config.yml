@@ -1,0 +1,25 @@
+app:
+  Name: "aws-load-balancer-controller"
+thirdParty:
+  repoURL: "https://github.com/aws/eks-charts.git"
+  targetRevision: "v0.0.242"
+  path: "stable/aws-load-balancer-controller"
+repoURL: https://github.com/grayburnd/platform-gitops.git
+prune: true
+selfHeal: true
+ignoreDifferences:
+  - kind: Secret
+    name: aws-load-balancer-tls
+    jqPathExpressions:
+      - .data
+  - group: admissionregistration.k8s.io
+    kind: MutatingWebhookConfiguration
+    name: aws-load-balancer-webhook
+    jqPathExpressions:
+      - .webhooks[].clientConfig.caBundle
+  - group: admissionregistration.k8s.io
+    kind: ValidatingWebhookConfiguration
+    name: aws-load-balancer-webhook
+    jqPathExpressions:
+      - .webhooks[].clientConfig.caBundle
+  

@@ -1,0 +1,11 @@
+app:
+  Name: "secrets-store-csi-driver"
+thirdParty:
+  repoURL: "https://github.com/kubernetes-sigs/secrets-store-csi-driver.git"
+  targetRevision: "v1.6.0"
+  path: "charts/secrets-store-csi-driver"
+repoURL: https://github.com/grayburnd/platform-gitops.git
+prune: true
+selfHeal: true
+ignoreDifferences: []
+  

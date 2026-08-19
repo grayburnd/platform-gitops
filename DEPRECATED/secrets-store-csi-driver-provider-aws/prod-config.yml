@@ -1,0 +1,11 @@
+app:
+  Name: "secrets-store-csi-driver-provider-aws"
+thirdParty:
+  repoURL: "https://github.com/aws/secrets-store-csi-driver-provider-aws.git"
+  targetRevision: "3.1.2"
+  path: "charts/secrets-store-csi-driver-provider-aws"
+repoURL: https://github.com/grayburnd/platform-gitops.git
+prune: true
+selfHeal: true
+ignoreDifferences: []
+  

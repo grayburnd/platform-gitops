@@ -1,0 +1,11 @@
+app:
+  Name: "gateway-api-crds"
+thirdParty:
+  repoURL: "https://github.com/kubernetes-sigs/gateway-api"
+  targetRevision: "release-1.6"  
+  path: "config/crd"
+repoURL: https://github.com/grayburnd/data-gitops-values.git
+prune: true
+selfHeal: true
+ignoreDifferences: []
+  
