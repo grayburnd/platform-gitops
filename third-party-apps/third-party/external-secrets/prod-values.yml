@@ -210,8 +210,7 @@ serviceAccount:
   # -- Automounts the service account token in all containers of the pod
   automount: true
   # -- Annotations to add to the service account.
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::AWS_ACCOUNT_ID_REDACTED:role/eso_operator-irsa-role
+  annotations: {}
   # -- Extra Labels to add to the service account.
   extraLabels: {}
   # -- The name of the service account to use.
