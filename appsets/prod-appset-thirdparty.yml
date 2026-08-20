@@ -13,7 +13,7 @@ spec:
               repoURL: https://github.com/grayburnd/platform-gitops.git
               revision: HEAD
               files:
-                - path: apps/third-party/*/prod-config.yml
+                - path: third-party-apps/*/prod-config.yml
           - list:
               elements:
                 - env: prod

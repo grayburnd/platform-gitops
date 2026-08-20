@@ -36,10 +36,10 @@ spec:
         targetRevision: HEAD ##Check
         helm:
           valueFiles:
-            - '{{ .path.path }}/{{ .env }}-values.yml'      
+            - '{{ .path }}/{{ .env }}-values.yml'      
       # Destination cluster and namespace to deploy the application
       destination:
-        server: '{{. cluster }}'
+        server: '{{ .cluster }}'
         namespace: '{{ .team }}-{{ .env }}'
       # Sync policy
       syncPolicy:
