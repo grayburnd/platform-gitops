@@ -18,29 +18,27 @@ spec:
   # Destination clusters can be identified by 'server', 'name', or both.
   destinations:
   # Destinations also allow wildcard globbing
-  - namespace: "*" #Platform are admins
+  - namespace: "platform-prod" #Platform are admins
     server: https://kubernetes.default.svc
-    name: in-cluster
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
 
   # Enables namespace orphaned resource monitoring.
   orphanedResources:
     warn: true
 
-  roles:
-  # A role which provides read-only access to all applications in the project
-  - name: read-only
-    description: Read-only privileges to my-project
-    policies:
-    - p, proj:my-project:read-only, applications, get, my-project/*, allow
-    groups:
-    - my-oidc-group
-
-  # A role which provides sync privileges to only the guestbook-dev application, e.g. to provide
-  # sync privileges to a CI system
-  - name: ci-role
-    description: Sync privileges for guestbook-dev
-    policies:
-    - p, proj:my-project:ci-role, applications, sync, my-project/guestbook-dev, allow
+  # roles:
+  # # A role which provides read-only access to all applications in the project
+  # - name: read-only
+  #   description: Read-only privileges to my-project
+  #   policies:
+  #   - p, proj:platform:read-only, applications, get, platform/*, allow
 
   # # Sync windows restrict when Applications may be synced. https://argo-cd.readthedocs.io/en/stable/user-guide/sync_windows/
   # syncWindows:
@@ -72,7 +70,7 @@ spec:
   # By default, apps may sync to any cluster specified under the `destinations` field, even if they are not
   # scoped to this project. Set the following field to `true` to restrict apps in this cluster to only clusters
   # scoped to this project.
-  permitOnlyProjectScopedClusters: true
+  permitOnlyProjectScopedClusters: false
 
   # When using Applications-in-any-namespace, this field determines which namespaces this AppProject permits
   # Applications to reside in. Details: https://argo-cd.readthedocs.io/en/stable/operator-manual/app-any-namespace/

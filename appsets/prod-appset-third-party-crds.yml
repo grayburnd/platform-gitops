@@ -13,7 +13,7 @@ spec:
               repoURL: https://github.com/grayburnd/platform-gitops.git
               revision: HEAD
               files:
-                - path: apps/third-party/crds/*/prod-config.yml
+                - path: crds/*/prod-config.yml
           - list:
               elements:
                 - env: prod
@@ -21,7 +21,7 @@ spec:
                   cluster: https://kubernetes.default.svc
   template:      
     metadata:
-      name: '{{ app.Name }}-{{ .env }}'
+      name: '{{ .app.Name }}-{{ .env }}'
     spec:
       # The project the application belongs to.
       project: '{{ .team }}'
@@ -39,7 +39,10 @@ spec:
         syncOptions:
           - ServerSideApply=true ##Useful for large resources i.e CRDs
           - ApplyOutOfSyncOnly=true  
-        automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
-          prune: '{{ .prune }}' # Specifies if resources should be pruned during auto-syncing ( false by default ).
-          selfHeal: '{{ .selfHeal }}' # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+  templatePatch: |
+    spec:
+      syncPolicy:
+        automated:
+          prune: {{ .prune }}
+          selfHeal: {{ .selfHeal }}
       
