@@ -1,5 +1,5 @@
 app:
-  Name: "gateway-api-crds"
+  Name: "external-secrets-crds"
 thirdParty:
   repoURL: "https://github.com/external-secrets/external-secrets.git"
   targetRevision: "helm-chart-2.9.0"  
