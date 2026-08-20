@@ -1,8 +1,8 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
-labels: {{ .Values.labels | toYamlPretty | nindent 2 }}
 metadata:
   name: {{ .Values.EBSStorageClass.name }}
+  labels: {{ .Values.labels | toYamlPretty | nindent 2 }}
 provisioner: {{ .Values.EBSStorageClass.provisioner }}
 {{- with .Values.EBSStorageClass.parameters }}
 parameters: {{- . | toYamlPretty | nindent 2 }}
