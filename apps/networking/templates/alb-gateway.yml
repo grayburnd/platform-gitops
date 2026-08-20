@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.publicALBGateway.name }}
   namespace: {{ .Values.team }}-{{ .Values.environment }}
 spec:
-  gatewayClassName: {{ .Values.publicALBGateway.gatewayClassName }}
+  gatewayClassName: {{ .Values.publicALBGateway.name }}
   infrastructure:
     parametersRef:
       kind: LoadBalancerConfiguration
