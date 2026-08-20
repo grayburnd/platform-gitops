@@ -534,7 +534,7 @@ webhook:
         port: 8081  # health port
       - protocol: TCP
         # @schema type: [string, integer]
-        port: 10250  # webhook port
+        port: 10350  # webhook port ##EKS Fargate reserves port 10250, changed to 10350
     # -- The egress traffic
     # The minimum egress ports required to function are:
     #   DNS (53/udp, 53/tcp)
@@ -551,7 +551,7 @@ webhook:
     flavour: ""
   imagePullSecrets: []
   # -- The port the webhook will listen to
-  port: 10250
+  port: 10350 ##EKS Fargate reserves port 10250, changed to 10350
   serviceAccount:
     # -- Specifies whether a service account should be created.
     create: true
