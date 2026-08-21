@@ -28,7 +28,7 @@ redisOperator:
   # Additional arguments for redis-operator container
   extraArgs: []
   # When not specified, the operator will watch all namespaces. It can be set to a specific namespace or multiple namespaces separated by commas.
-  watchNamespace: "redis"
+  watchNamespace: "data-prod"
   # -- The DNS domain suffix used for Kubernetes service discovery.
   # Default is "cluster.local". Change this if your cluster uses a custom DNS domain.
   serviceDNSDomain: "cluster.local"
