@@ -168,7 +168,7 @@ processPushSecret: true
 # ConfigMaps and optionally other resource types specified in generic.resources.
 genericTargets:
   # -- Enable generic target support
-  enabled: false
+  enabled: true
   # -- List of additional resource types to grant permissions for.
   # Each entry should specify apiGroup, resources, and verbs.
   # Example:
