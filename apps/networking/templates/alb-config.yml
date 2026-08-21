@@ -3,5 +3,7 @@ kind: LoadBalancerConfiguration
 metadata:
   name: {{ .Values.publicALBGateway.name }}-config
   namespace: {{ .Values.team }}-{{ .Values.environment }}
+  annotations:
+    argocd.argoproj.io/sync-wave: '1'
 spec:
   scheme: {{ .Values.publicALBGateway.scheme }}
