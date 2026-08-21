@@ -3,6 +3,8 @@ kind: Gateway
 metadata:
   name: {{ .Values.publicALBGateway.name }}
   namespace: {{ .Values.team }}-{{ .Values.environment }}
+  annotations:
+    argocd.argoproj.io/sync-wave: '2'
 spec:
   gatewayClassName: {{ .Values.publicALBGateway.name }}
   infrastructure:
