@@ -26,7 +26,7 @@ fullnameOverride: ""
 ##
 commonLabels:
   env: prod
-  app: kube-prometheus-stack
+  component: kube-prometheus-stack
 
 ## Install Prometheus Operator CRDs
 ##
@@ -415,7 +415,7 @@ alertmanager:
   ##
   additionalLabels:
     env: prod
-    app: kube-prometheus-stack
+    component: kube-prometheus-stack
 
   ## API that Prometheus will use to communicate with alertmanager. Possible values are v1, v2
   ##
@@ -2997,7 +2997,7 @@ prometheusOperator:
       ##
       podLabels:
         env: prod
-        app: kube-prometheus-stack
+        component: kube-prometheus-stack
 
       ## Annotations to add to the operator webhook pod
       ##
@@ -3316,7 +3316,7 @@ prometheusOperator:
   ##
   podLabels:
     env: prod
-    app: kube-prometheus-stack
+    component: kube-prometheus-stack
 
   ## Annotations to add to the operator pod
   ##
