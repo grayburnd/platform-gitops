@@ -413,7 +413,9 @@ alertmanager:
 
   ## Additional labels for Alertmanager
   ##
-  additionalLabels: {}
+  additionalLabels:
+    env: prod
+    app: kube-prometheus-stack
 
   ## API that Prometheus will use to communicate with alertmanager. Possible values are v1, v2
   ##
@@ -2993,7 +2995,9 @@ prometheusOperator:
 
       ## Labels to add to the operator webhook pod
       ##
-      podLabels: {}
+      podLabels:
+        env: prod
+        app: kube-prometheus-stack
 
       ## Annotations to add to the operator webhook pod
       ##
@@ -3310,7 +3314,9 @@ prometheusOperator:
 
   ## Labels to add to the operator pod
   ##
-  podLabels: {}
+  podLabels:
+    env: prod
+    app: kube-prometheus-stack
 
   ## Annotations to add to the operator pod
   ##
