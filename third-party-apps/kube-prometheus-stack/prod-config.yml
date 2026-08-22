@@ -1,0 +1,11 @@
+app:
+  Name: "postgres-operator"
+thirdParty:
+  repoURL: "https://github.com/zalando/postgres-operator"
+  targetRevision: "alertmanager-snmp-notifier-2.1.1"
+  path: "charts/kube-prometheus-stack"
+repoURL: https://github.com/grayburnd/platform-gitops.git
+prune: true
+selfHeal: true
+ignoreDifferences: []
+  

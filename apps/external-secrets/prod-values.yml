@@ -2,7 +2,7 @@ team: platform
 environment: prod
 labels:
   app: platform
-  component: secrets
+  component: external-secrets
   env: prod
   team: platform
 aws:
