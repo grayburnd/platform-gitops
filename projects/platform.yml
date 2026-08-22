@@ -18,7 +18,7 @@ spec:
   # Destination clusters can be identified by 'server', 'name', or both.
   destinations:
   # Destinations also allow wildcard globbing
-  - namespace: "platform-prod" #Platform are admins
+  - namespace: "*" #Platform are admins
     server: https://kubernetes.default.svc
 
   clusterResourceWhitelist:

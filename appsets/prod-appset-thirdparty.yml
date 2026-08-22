@@ -47,7 +47,6 @@ spec:
       syncPolicy:
         syncOptions:
           - ServerSideApply=true ##Useful for large resources i.e CRDs
-          - ApplyOutOfSyncOnly=true  
   templatePatch: |
     {{- if .ignoreDifferences }}
     ignoreDifferences: {{ .ignoreDifferences | toYaml | nindent 6 }}

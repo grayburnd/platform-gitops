@@ -37,7 +37,7 @@ crds:
   ## It deploys a corresponding clusterrole, clusterrolebinding and serviceaccount to apply the CRDs.
   ## This feature is in preview, off by default and may change in the future.
   upgradeJob:
-    enabled: true
+    enabled: false
     ## Force apply the CRDs, taking ownership from the manager that installed them (e.g. helm).
     ## Required for the job to actually upgrade CRDs whose schema/version changed.
     forceConflicts: true
