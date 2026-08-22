@@ -2,7 +2,7 @@ team: platform
 environment: prod
 labels:
   app: platform
-  component: secrets
+  component: kube-prometheus-stack
   env: prod
   team: platform
 aws:
@@ -18,3 +18,6 @@ clusterSecretStore_parameter_store:
   service: ParameterStore
   serviceAccountRef:
     name: external-secrets-sa
+grafanaExternalSecret:
+  name: grafana-secret
+  storeRef: prod-cluster-secret-store-secrets-manager ##Secret Store Ref to use
