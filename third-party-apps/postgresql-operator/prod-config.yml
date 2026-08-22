@@ -1,5 +1,5 @@
 app:
-  Name: "postgres-operator"
+  Name: "postgresql-operator"
 thirdParty:
   repoURL: "https://github.com/zalando/postgres-operator"
   targetRevision: "v2.0.1"
