@@ -24,7 +24,6 @@ redisOperator:
   podLabels:
     env: prod
     app: redis
-    tier: operator
   # Additional arguments for redis-operator container
   extraArgs: []
   # When not specified, the operator will watch all namespaces. It can be set to a specific namespace or multiple namespaces separated by commas.
