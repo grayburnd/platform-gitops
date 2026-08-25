@@ -83,7 +83,7 @@ crds:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-namespaceOverride: "platform-prod"
+namespaceOverride: "kube-system"
 
 # -- Additional labels added to all helm chart resources.
 commonLabels: {}

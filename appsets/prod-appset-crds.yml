@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: appset-third-party-crds
-  namespace: platform-prod ##Only for Prod
+  namespace: kube-system ##Only for Prod
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
@@ -33,7 +33,7 @@ spec:
       # Destination cluster and namespace to deploy the application
       destination:
         server: '{{ .cluster }}'
-        namespace: '{{ .team }}-{{ .env }}'
+        namespace: 'kube-system'
       # Sync policy
       syncPolicy:
         syncOptions:

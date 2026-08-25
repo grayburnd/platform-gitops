@@ -8,7 +8,7 @@ nameOverride: ""
 
 ## Override the deployment namespace
 ##
-namespaceOverride: "platform-prod"
+namespaceOverride: "kube-system"
 
 ## Provide a k8s version to auto dashboard import script example: kubeTargetVersionOverride: 1.26.6
 ##
@@ -405,7 +405,7 @@ alertmanager:
   enabled: true
 
   # Optional: Override the namespace where Alertmanager will be deployed.
-  namespaceOverride: "platform-prod"
+  namespaceOverride: "kube-system"
 
   ## Annotations for Alertmanager
   ##
@@ -1382,7 +1382,7 @@ alertmanager:
 ##
 grafana:
   enabled: true
-  namespaceOverride: "platform-prod"
+  namespaceOverride: "kube-system"
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
