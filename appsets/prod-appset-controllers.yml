@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1 ##See if can take either helm 3rd party with ow
 kind: ApplicationSet
 metadata:
   name: appset-third-party
-  namespace: platform-prod ##Only for Prod
+  namespace: kube-system ##Only for Prod
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
@@ -13,7 +13,7 @@ spec:
               repoURL: https://github.com/grayburnd/platform-gitops.git
               revision: HEAD
               files:
-                - path: third-party-apps/*/prod-config.yml
+                - path: controllers/*/prod-config.yml
           - list:
               elements:
                 - env: prod
@@ -41,7 +41,7 @@ spec:
       # Destination cluster and namespace to deploy the application
       destination:
         server: '{{ .cluster }}'
-        namespace: '{{ .team }}-{{ .env }}'
+        namespace: 'kube-system'
 
       # Sync policy
       syncPolicy:
