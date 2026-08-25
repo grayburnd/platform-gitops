@@ -14,7 +14,6 @@ podAnnotations: {}
 podLabels:
   env: prod
   app: postgres
-  tier: operator
 
 configTarget: "OperatorConfigurationCRD"
 
