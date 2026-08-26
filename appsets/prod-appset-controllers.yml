@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1 ##See if can take either helm 3rd party with own apps or just one of them. May need seperate appset.
 kind: ApplicationSet
 metadata:
-  name: appset-third-party
+  name: appset-controllers
   namespace: kube-system ##Only for Prod
 spec:
   goTemplate: true
