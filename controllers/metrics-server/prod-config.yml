@@ -3,7 +3,7 @@ app:
 thirdParty:
   repoURL: "https://github.com/kubernetes-sigs/metrics-server.git"
   targetRevision: "v0.9.0"
-  path: "charts/postgres-operator"
+  path: "charts/metrics-server"
 repoURL: https://github.com/grayburnd/platform-gitops.git
 prune: true
 selfHeal: true
