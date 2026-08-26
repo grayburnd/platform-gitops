@@ -131,9 +131,9 @@ controller:
     # -- SHA256 digest of the controller image.
     digest: sha256:723130949e4cab989461ff07d1be4cd781d63515432494641b33c235f300ae23
   # -- Additional environment variables for the controller pod.
-  env: []
-  # - name: AWS_REGION
-  #   value: eu-west-1
+  env:
+    - name: AWS_REGION
+      value: us-east-1
   envFrom: []
   securityContext:
     # -- AppArmor profile for the controller container.
