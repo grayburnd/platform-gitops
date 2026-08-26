@@ -22,7 +22,7 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template.
   name: "karpenter-sa"
   # -- Additional annotations for the ServiceAccount.
-  annotations: {}
+  annotations: {} ##Add Karpenter Controller Role here
 # -- Specifies additional rules for the core ClusterRole.
 additionalClusterRoleRules: []
 serviceMonitor:
@@ -206,7 +206,7 @@ settings:
   # -- Interruption queue is the name of the SQS queue used for processing interruption events from EC2.
   # Interruption handling is disabled if not specified. Enabling interruption handling may
   # require additional permissions on the controller service account. Additional permissions are outlined in the docs.
-  interruptionQueue: ""
+  interruptionQueue: "main-eks-cluster"
   # -- Marking this true signals Karpenter to respect zonal shifts when making node claims.
   # More information about Zonal Shift here: https://docs.aws.amazon.com/eks/latest/userguide/zone-shift-enable.html#zone-shift-enable-steps
   enableZonalShift: false
