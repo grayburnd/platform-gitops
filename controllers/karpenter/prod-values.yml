@@ -20,10 +20,10 @@ serviceAccount:
   create: true
   # -- The name of the ServiceAccount to use.
   # If not set and create is true, a name is generated using the fullname template.
-  name: "karpenter-sa"
+  name: "karpenter-controller-sa"
   # -- Additional annotations for the ServiceAccount.
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::632988741882:role/KarpenterControllerRole-main-eks-cluster
+    eks.amazonaws.com/role-arn: arn:aws:iam::632988741882:role/karpenter_controller-irsa-role
 # -- Specifies additional rules for the core ClusterRole.
 additionalClusterRoleRules: []
 serviceMonitor:
