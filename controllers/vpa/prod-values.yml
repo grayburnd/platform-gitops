@@ -74,7 +74,7 @@ admissionController:
   extraArgs: []
 
   # Resources for the Admission Controller default container.
-  resources: {}
+  resources: 
     # limits:
     #   cpu: 200m
     #   memory: 500Mi
