@@ -95,8 +95,8 @@ updateStrategy: {}
 
 podDisruptionBudget:
   # https://kubernetes.io/docs/tasks/run-application/configure-pdb/
-  enabled: false
-  minAvailable:
+  enabled: true
+  minAvailable: 1
   maxUnavailable:
   unhealthyPodEvictionPolicy:
 
@@ -105,6 +105,7 @@ defaultArgs:
   - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
   - --kubelet-use-node-status-port
   - --metric-resolution=15s
+  - --kubelet-insecure-tls
 
 args: []
 
