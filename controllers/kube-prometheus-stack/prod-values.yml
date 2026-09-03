@@ -1384,6 +1384,23 @@ grafana:
   enabled: true
   namespaceOverride: "kube-system"
 
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+  startupProbe:
+    httpGet:
+      path: /api/health
+      port: grafana
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 30
+
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
   forceDeployDatasources: false
