@@ -1386,11 +1386,11 @@ grafana:
 
   resources:
     requests:
-      cpu: 100m
-      memory: 256Mi
-    limits:
-      cpu: 500m
-      memory: 512Mi
+      cpu: "0.5"
+      memory: "3Gi"
+    # limits:
+    #   cpu: 500m
+    #   memory: 512Mi
 
   startupProbe:
     httpGet:
@@ -3633,6 +3633,7 @@ prometheusOperator:
 ## Deploy a Prometheus instance
 ##
 prometheus:
+  #namespaceOverride: "platform-prod"
   enabled: true
 
   ## Toggle prometheus into agent mode
