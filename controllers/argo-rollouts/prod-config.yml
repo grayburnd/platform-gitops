@@ -7,4 +7,5 @@ thirdParty:
 repoURL: https://github.com/grayburnd/platform-gitops.git
 prune: true
 selfHeal: true
+ignoreDifferences: []
   
