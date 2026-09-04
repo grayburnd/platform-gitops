@@ -459,11 +459,12 @@ objectSelector:
 
 serviceMonitor:
   # Specifies whether a service monitor should be created
-  enabled: false
+  enabled: true
   # Namespace to create the service monitor in
-  namespace:
+  namespace: "kube-system"
   # Labels to add to the service monitor
-  additionalLabels: {}
+  additionalLabels:
+    release: kube-prometheus-stack-prod
   # Prometheus scrape interval
   interval: 1m
   # Prometheus scrape timeout
