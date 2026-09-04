@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: fargate-observability-config
+  name: aws-logging
   namespace: "aws-observability"
 data:
   filters.conf: |
