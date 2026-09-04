@@ -294,7 +294,7 @@ resources:
 
 serviceMonitor:
   # -- Specifies whether to create a ServiceMonitor resource for collecting Prometheus metrics
-  enabled: false
+  enabled: true
 
   # -- How should we react to missing CRD "`monitoring.coreos.com/v1/ServiceMonitor`"
   #
@@ -312,10 +312,11 @@ serviceMonitor:
   renderMode: skipIfMissing   # @schema enum: [skipIfMissing, failIfMissing, alwaysRender]
 
   # -- namespace where you want to install ServiceMonitors
-  namespace: ""
+  namespace: "kube-system"
 
   # -- Additional labels
-  additionalLabels: {}
+  additionalLabels:
+    release: kube-prometheus-stack-prod
 
   # --  Interval to scrape metrics
   interval: 30s
