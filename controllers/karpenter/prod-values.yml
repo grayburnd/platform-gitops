@@ -28,9 +28,10 @@ serviceAccount:
 additionalClusterRoleRules: []
 serviceMonitor:
   # -- Specifies whether a ServiceMonitor should be created.
-  enabled: false
+  enabled: true
   # -- Additional labels for the ServiceMonitor.
-  additionalLabels: {}
+  additionalLabels:
+    release: kube-prometheus-stack-prod
   # -- Relabelings for the `http-metrics` endpoint on the ServiceMonitor.
   # For more details on relabelings, see: https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config
   relabelings: []
