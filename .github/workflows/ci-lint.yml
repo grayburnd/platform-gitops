@@ -32,7 +32,7 @@ jobs:
             echo "===VALIDATING K8S $dir MANIFESTS==="
             for app in $(ls ${dir}/); do
               cd ${dir}/${app}
-              helm lint -f=${{ env.ENVIRONMENT }}.yml . &
+              helm lint -f=${{ env.ENVIRONMENT }}-values.yml . &
               wait $!
               cd ${original_dir};
             done;
