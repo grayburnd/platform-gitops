@@ -37,7 +37,6 @@ jobs:
 #We use -strict to disallow additional properties not in schema or duplicated keys
       - name: Helm validate all apps
         run: |
-          helm plugin install https://github.com/melmorabity/helm-kubeconform
           original_dir=$(pwd)
           for app in $(ls apps/); do
             cd apps/${app}
