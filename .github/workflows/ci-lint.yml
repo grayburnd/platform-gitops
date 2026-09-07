@@ -26,14 +26,13 @@ jobs:
 
       - name: Helm validate all apps
         run: |
-          ls
           original_dir=$(pwd)
           for app in $(ls apps/); do
             cd apps/${app}
             helm lint -f=${{ env.ENVIRONMENT }}-values.yml . &
-            wait $!;
+            wait $!
+            cd ${original_dir};
           done
-          cd ${original_dir}
 #We use -ignore-missing-schemas to exclude custom CRDs for simplicity/demo purposes
 #We use -strict to disallow additional properties not in schema or duplicated keys
       - name: Helm validate all apps
@@ -43,7 +42,7 @@ jobs:
           for app in $(ls apps/); do
             cd apps/${app}
             helm template . -f ${{ env.ENVIRONMENT }}-values.yml | kubeconform -ignore-missing-schemas -strict &
-            wait $!;
+            wait $!
+            cd ${original_dir};
           done
-          cd ${original_dir}
       
