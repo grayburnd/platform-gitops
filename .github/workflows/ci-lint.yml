@@ -1,0 +1,48 @@
+name: CI [Lint]
+
+on:
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: read ##GitLeaks required.
+env:
+  ENVIRONMENT: "prod"
+jobs:
+  ci-lint-and-checks:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout local Git Repo
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Install kubetools
+        uses: yokawasa/action-setup-kube-tools@v0.13.5
+
+      - uses: gitleaks/gitleaks-action@v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Helm validate all apps
+        run: |
+          original_dir=$(pwd)
+          for app in $(ls apps/); do
+            cd apps/${app}
+            helm lint -f=${{ env.ENVIRONMENT }}-values.yml . &
+            wait $!;
+          done
+          cd ${original_dir}
+#We use -ignore-missing-schemas to exclude custom CRDs for simplicity/demo purposes
+#We use -strict to disallow additional properties not in schema or duplicated keys
+      - name: Helm validate all apps
+        run: |
+          helm plugin install https://github.com/melmorabity/helm-kubeconform
+          original_dir=$(pwd)
+          for app in $(ls apps/); do
+            cd apps/${app}
+            helm template . -f ${{ env.ENVIRONMENT }}-values.yml | kubeconform -ignore-missing-schemas -strict &
+            wait $!;
+          done
+          cd ${original_dir}
+      
