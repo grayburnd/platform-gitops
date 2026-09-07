@@ -26,6 +26,7 @@ jobs:
 
       - name: Helm validate all apps
         run: |
+          ls
           original_dir=$(pwd)
           for app in $(ls apps/); do
             cd apps/${app}
