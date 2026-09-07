@@ -178,7 +178,7 @@ createIngressClassResource: true
 region: us-east-1
 
 # The VPC ID for the Kubernetes cluster. Set this manually when your pods are unable to use the metadata service to determine this automatically
-vpcId: vpc-0d3dee54917101f42
+vpcId: vpc-0863e1fc8e13c611a
 
 # This is alternative to vpcId. Set this when your pods are unable to use the metadata service to determine VPC automatically.
 # All specified tags are used as AND filters for VPC lookup.
