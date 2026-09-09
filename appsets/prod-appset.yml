@@ -20,7 +20,7 @@ spec:
                 team: platform
                 cluster: https://kubernetes.default.svc
                 repoURL: https://github.com/grayburnd/platform-gitops.git
-                valuesRepoURL: https://github.com/grayburnd/private-gitops-config.git
+                valuesRepoURL: https://github.com/grayburnd/private-gitops-values.git
 
   template:      
     metadata:

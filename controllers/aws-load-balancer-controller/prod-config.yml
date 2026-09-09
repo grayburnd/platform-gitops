@@ -4,7 +4,7 @@ thirdParty:
   repoURL: "https://github.com/aws/eks-charts.git"
   targetRevision: "v0.0.242"
   path: "stable/aws-load-balancer-controller"
-valuesRepoURL: https://github.com/grayburnd/private-gitops-config.git
+valuesRepoURL: https://github.com/grayburnd/private-gitops-values.git
 prune: true
 selfHeal: true
 ignoreDifferences:

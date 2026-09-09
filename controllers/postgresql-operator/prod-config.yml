@@ -4,7 +4,7 @@ thirdParty:
   repoURL: "https://github.com/zalando/postgres-operator"
   targetRevision: "v2.0.1"
   path: "charts/postgres-operator"
-valuesRepoURL: https://github.com/grayburnd/private-gitops-config.git
+valuesRepoURL: https://github.com/grayburnd/private-gitops-values.git
 prune: true
 selfHeal: true
 ignoreDifferences: []
