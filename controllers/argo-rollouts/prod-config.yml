@@ -4,7 +4,7 @@ thirdParty:
   repoURL: "https://github.com/argoproj/argo-helm.git"
   targetRevision: "argo-cd-10.7.2"
   path: "charts/argo-rollouts"
-repoURL: https://github.com/grayburnd/platform-gitops.git
+valuesRepoURL: https://github.com/grayburnd/private-gitops-config.git
 prune: true
 selfHeal: true
 ignoreDifferences: []
