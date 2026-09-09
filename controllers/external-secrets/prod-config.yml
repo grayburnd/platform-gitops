@@ -4,7 +4,7 @@ thirdParty:
   repoURL: "https://github.com/external-secrets/external-secrets.git"
   targetRevision: "helm-chart-2.9.0"
   path: "deploy/charts/external-secrets"
-valuesRepoURL: https://github.com/grayburnd/private-gitops-config.git
+valuesRepoURL: https://github.com/grayburnd/private-gitops-values.git
 prune: true
 selfHeal: true
 ignoreDifferences: []
