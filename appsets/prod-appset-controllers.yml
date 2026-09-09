@@ -34,7 +34,7 @@ spec:
           helm:
             valueFiles:
               - $values/{{ trimSuffix "/prod-config.yml" .path.path }}/{{ .env }}-values.yml
-        - repoURL: '{{ .repoURL }}'
+        - repoURL: '{{ .valuesRepoURL }}'
           targetRevision: HEAD
           ref: values
       

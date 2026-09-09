@@ -20,8 +20,7 @@ spec:
                 team: platform
                 cluster: https://kubernetes.default.svc
                 repoURL: https://github.com/grayburnd/platform-gitops.git
-              # - env: staging
-              # - env: dev
+                valuesRepoURL: https://github.com/grayburnd/private-gitops-config.git
 
   template:      
     metadata:
@@ -30,13 +29,16 @@ spec:
       # The project the application belongs to.
       project: '{{ .team }}'
       # Source of the application manifests
-      source:
-        repoURL: '{{ .repoURL }}'
-        path: '{{ .path.path }}'
-        targetRevision: HEAD ##Check
-        helm:
-          valueFiles:
-            - '{{ .env }}-values.yml'      
+      sources:
+        - repoURL: '{{ .repoURL }}'
+          path: '{{ .path.path }}'
+          targetRevision: HEAD ##Check
+          helm:
+            valueFiles:
+              - $values/'{{ .env }}-values.yml'
+        - repoURL: '{{ .valuesRepoURL }}'
+          targetRevision: HEAD
+          ref: values   
       # Destination cluster and namespace to deploy the application
       destination:
         server: '{{ .cluster }}'

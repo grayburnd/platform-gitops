@@ -4,7 +4,7 @@ thirdParty:
   repoURL: "https://github.com/OT-CONTAINER-KIT/redis-operator.git"
   targetRevision: "v0.26.0"
   path: "charts/redis-operator"
-repoURL: https://github.com/grayburnd/platform-gitops.git
+valuesRepoURL: https://github.com/grayburnd/private-gitops-config.git
 prune: true
 selfHeal: true
 ignoreDifferences: []
