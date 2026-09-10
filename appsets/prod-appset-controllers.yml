@@ -33,7 +33,7 @@ spec:
           targetRevision: '{{ .thirdParty.targetRevision }}' ##Check
           helm:
             valueFiles:
-              - $values/{{ trimSuffix "/prod-config.yml" .path.path }}/{{ .env }}-values.yml
+              - $values/{{ .team }}-gitops/{{ trimSuffix "/prod-config.yml" .path.path }}/{{ .env }}-values.yml
         - repoURL: '{{ .valuesRepoURL }}'
           targetRevision: HEAD
           ref: values
