@@ -1,0 +1,23 @@
+team: platform
+environment: prod
+labels:
+  app: platform
+  component: kube-prometheus-stack
+  env: prod
+  team: platform
+aws:
+  accountId: "123456789123"
+  region: us-east-1
+clusterSecretStore_secrets_manager:
+  role: arn:aws:iam::123456789123:role/eso_operator-irsa-role
+  service: SecretsManager
+  serviceAccountRef:
+    name: external-secrets-sa
+clusterSecretStore_parameter_store:
+  role: arn:aws:iam::123456789123:role/eso_operator-irsa-role
+  service: ParameterStore
+  serviceAccountRef:
+    name: external-secrets-sa
+grafanaExternalSecret:
+  name: grafana-secret
+  storeRef: prod-cluster-secret-store-secrets-manager ##Secret Store Ref to use

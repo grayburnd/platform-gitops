@@ -15,6 +15,8 @@ The Terraform infrastructure layer creates the cluster foundations and AWS integ
 | `crds/` | Third-party CRD sources including Gateway API and External Secrets |
 | `projects/` | ArgoCD Projects for `backend`, `data`, `frontend` and `platform` |
 
+Example values files are included for reference for all self-maintained Helm charts. For the third-party-maintained charts referenced under `controllers/`, use the referenced third-party Helm repository as the source of truth and fetch and use its Helm values chart.
+
 ## ArgoCD ApplicationSets
 
 The platform ApplicationSet discovers Helm applications under `apps/*` and deploys them to the `platform-prod` namespace. The controller ApplicationSet reads `controllers/*/prod-config.yml`, combines repository values with third-party Helm sources and deploys controllers to `kube-system`. The CRD ApplicationSet reads `crds/*/prod-config.yml` and applies the referenced CRDs to `kube-system`.
